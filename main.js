@@ -1,23 +1,3 @@
-// SEND EMAILS
-
-sendEmail = () => {
-    Email.send({
-        Host: "smtp.elasticemail.com",
-        Username: "", 
-        Password: "",  
-        To: "",
-        From: "",
-        Subject: document.querySelector('#subject').value,
-        Body: document.getElementById('msg').value
-    }).then(
-        message => alert(Window.valNo + " mails has been sent successfully, press " + message + " to continue.")
-    );
-    console.log(document.getElementById('msg').value);
-    console.log(document.getElementById('msg').innerHTML);
-    console.log(document.getElementById('msg').innerText);
-}
-
-
 // VERIFY EMAILS
 
 let upload = document.getElementById('upload');
@@ -65,3 +45,23 @@ upload.addEventListener('change',() => {
         document.querySelector('#invalCount').innerHTML = invalNo;
     };
 });
+
+// SEND EMAILS
+
+sendEmail = () => {
+    Email.send({
+        Host: "smtp.elasticemail.com",
+        Username: "", 
+        Password: "",  
+        To: "",
+        From: "",
+        Subject: document.querySelector('#subject').value,
+        Body: document.getElementById('msg').value
+    }).then(
+        message => alert(Window.valNo + " mails has been sent successfully, press " + message + " to continue.")
+    );
+    console.log(document.getElementById('msg').value);
+    console.log(document.getElementById('msg').innerHTML);
+    console.log(document.getElementById('msg').innerText);
+}
+
